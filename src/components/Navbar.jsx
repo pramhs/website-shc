@@ -18,7 +18,7 @@ const NavbarContainer = ({ children }) => {
 const NavbarBrand = ({ brand, logo }) => {
     return (
         <div>
-            <Link to="/">
+            <Link to="/home">
                 <div className="flex items-center gap-x-2">
                     <img src={logo} alt="" className="size-9" />
                     <h1 className="text-lg font-bold uppercase text-slate-800">
@@ -35,7 +35,7 @@ const Navbarlink = () => {
         <nav className="py-4">
             <ul className="flex gap-x-10 text-slate-800">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/home">Home</Link>
                 </li>
                 <li>
                     <Link to="/services">Service</Link>
@@ -54,10 +54,12 @@ const Navbarlink = () => {
 const Navbar = () => {
     return (
         <>
-            <NavbarContainer>
-                <NavbarBrand logo={shc_logo} brand="Shin Heung Indonesia" />
-                <Navbarlink />
-            </NavbarContainer>
+            <div className="absolute z-50 w-full">
+                <NavbarContainer>
+                    <NavbarBrand logo={shc_logo} brand="Shin Heung Indonesia" />
+                    <Navbarlink />
+                </NavbarContainer>
+            </div>
         </>
     );
 };

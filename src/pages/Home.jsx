@@ -3,6 +3,17 @@ import img_machine from '../assets/machine.jpg';
 import net_element from '../assets/net_element.png';
 import Footer from '../components/Footer';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
+import sharp from '../assets/customer_logo/sharp.png';
+import epson from '../assets/customer_logo/epson.png';
+import hmmi from '../assets/customer_logo/hmmi.png';
+import ingress from '../assets/customer_logo/ingress.png';
+import jvc from '../assets/customer_logo/jvc.png';
+import mmki from '../assets/customer_logo/mmki.png';
+import samsung from '../assets/customer_logo/samsung.png';
+import katolec from '../assets/customer_logo/katolec.png';
+import daijo from '../assets/customer_logo/daijo.png';
+import suzuki from '../assets/customer_logo/suzuki.png';
+import patco from '../assets/customer_logo/patco.png';
 
 const Home = () => {
     return (
@@ -15,7 +26,7 @@ const Home = () => {
                     </div>
                     <div className="absolute h-full">
                         <div className="grid w-4/5 h-full mx-auto place-content-center">
-                            <div className="w-3/4">
+                            <div className="w-3/4 mt-16">
                                 <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
                                     Driven by Quality, Committed to Satisfaction
                                 </h1>
@@ -39,12 +50,11 @@ const Home = () => {
             {/* header title */}
             <div className="bg-[url('./assets/img-cover2.png')] bg-cover mb-16">
                 <div className="w-4/5 py-12 mx-auto">
-                    <div className="w-2/5">
-                        <h3 className="text-2xl font-medium text-slate-200">
-                            Discover Our Journey: Excellence in Manufacturing
-                            and Commitment to You
-                        </h3>
-                    </div>
+                    <HeadingTitle
+                        text="Discover Our Journey: Excellence in Manufacturing
+                            and Commitment to You"
+                        css="text-slate-200"
+                    />
                 </div>
             </div>
 
@@ -127,25 +137,21 @@ const Home = () => {
 
             {/* customers */}
             <div className="w-4/5 mx-auto mb-20">
-                <div className="w-2/5 mb-20">
-                    <h3 className="text-2xl font-medium">
-                        For more than 20 years we have been trusted by our
-                        customers.
-                    </h3>
+                <div className="mb-20">
+                    <HeadingTitle text="For more than 20 years we have been trusted by our customers." />
                 </div>
-                <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-                    <CustomerLogo img="/customer_logo/sharp.png" />
-                    <CustomerLogo img="/customer_logo/epson.png" />
-                    <CustomerLogo img="/customer_logo/hmmi.png" />
-                    <CustomerLogo img="/customer_logo/ingress.png" />
-                    <CustomerLogo img="/customer_logo/jvc.png" />
-                    <CustomerLogo img="/customer_logo/mmki.png" />
-                    <CustomerLogo img="/customer_logo/samsung.png" />
-                    <CustomerLogo img="/customer_logo/jvc.png" />
-                    <CustomerLogo img="/customer_logo/katolec.png" />
-                    <CustomerLogo img="/customer_logo/daijo.png" />
-                    <CustomerLogo img="/customer_logo/suzuki.png" />
-                    <CustomerLogo img="/customer_logo/patco.png" />
+                <div className="grid items-center grid-cols-6 justify-items-center gap-x-12 gap-y-4">
+                    <CustomerLogo img={sharp} />
+                    <CustomerLogo img={epson} />
+                    <CustomerLogo img={hmmi} />
+                    <CustomerLogo img={ingress} />
+                    <CustomerLogo img={jvc} />
+                    <CustomerLogo img={mmki} />
+                    <CustomerLogo img={samsung} />
+                    <CustomerLogo img={katolec} />
+                    <CustomerLogo img={daijo} />
+                    <CustomerLogo img={suzuki} />
+                    <CustomerLogo img={patco} />
                 </div>
             </div>
             <Footer />
@@ -178,10 +184,18 @@ const ServiceSolutionCard = ({ img, text }) => {
 const CustomerLogo = ({ img }) => {
     return (
         <>
-            <div className="flex items-center w-24 h-24">
+            <div className="grid items-center w-24 h-24">
                 <img src={img} />
             </div>
         </>
+    );
+};
+
+const HeadingTitle = ({ text, css }) => {
+    return (
+        <div className="w-2/5">
+            <h3 className={`${css} text-2xl font-medium`}>{text}</h3>
+        </div>
     );
 };
 

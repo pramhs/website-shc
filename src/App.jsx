@@ -12,10 +12,10 @@ function App() {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/services" element={<Service />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/services" element={<NotFound />} />
+                    <Route path="/about" element={<NotFound />} />
+                    <Route path="/contact" element={<NotFound />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>

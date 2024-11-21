@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Container from './Container';
 
 const Copyright = () => {
@@ -5,7 +6,7 @@ const Copyright = () => {
         <div className="bg-primary">
             <div className="w-4/5 py-6 mx-auto">
                 <p className="text-slate-200">
-                    Copyright © 2024  PT Shin Heung Indonesia. All rights
+                    Copyright © 2024 PT Shin Heung Indonesia. All rights
                     reserved.
                 </p>
             </div>
@@ -24,9 +25,12 @@ const Content = () => {
                             deliver the best results for our customers.
                         </p>
                     </div>
-                    <button className="px-4 py-2 bg-primary text-slate-200">
+                    <Link
+                        to="/contact"
+                        className="px-4 py-2 bg-primary text-slate-200"
+                    >
                         Contact Us
-                    </button>
+                    </Link>
                 </div>
             </Container>
         </div>

@@ -61,7 +61,7 @@ const Contact = () => {
         <>
             <div className="mt-20 mb-20">
                 <Container>
-                    <div className="flex items-center justify-center gap-x-8">
+                    <div className="flex items-center justify-between gap-x-8 bg-slate-100">
                         <Cover />
                         <Information />
                     </div>

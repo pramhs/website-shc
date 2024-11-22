@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import Container from './Container';
+import MainContainer from './MainContainer';
 
 function Copyright() {
     return (
@@ -17,7 +17,7 @@ function Copyright() {
 function Content() {
     return (
         <div className="bg-slate-100">
-            <Container>
+            <MainContainer>
                 <div className="py-16">
                     <div className="w-2/5 mb-8">
                         <p>
@@ -32,7 +32,7 @@ function Content() {
                         Contact Us
                     </Link>
                 </div>
-            </Container>
+            </MainContainer>
         </div>
     );
 }

@@ -1,4 +1,4 @@
-const NotFound = () => {
+export default function NotFound() {
     return (
         <>
             <div className="grid min-h-screen justify-items-center place-content-center">
@@ -9,5 +9,4 @@ const NotFound = () => {
             </div>
         </>
     );
-};
-export default NotFound;
+}

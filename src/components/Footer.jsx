@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Container from './Container';
 
-const Copyright = () => {
+function Copyright() {
     return (
         <div className="bg-primary">
             <div className="w-4/5 py-6 mx-auto">
@@ -12,9 +12,9 @@ const Copyright = () => {
             </div>
         </div>
     );
-};
+}
 
-const Content = () => {
+function Content() {
     return (
         <div className="bg-slate-100">
             <Container>
@@ -35,13 +35,12 @@ const Content = () => {
             </Container>
         </div>
     );
-};
-const Footer = () => {
+}
+export default function Footer() {
     return (
         <>
             <Content />
             <Copyright />
         </>
     );
-};
-export default Footer;
+}

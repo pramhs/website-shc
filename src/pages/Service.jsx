@@ -4,7 +4,8 @@ import cmm_machine from '../assets/cmm.png';
 import image1 from '../assets/image-45.png';
 import image2 from '../assets/image-46.png';
 import image3 from '../assets/image-47.png';
-const Service = () => {
+
+export default function Service() {
     return (
         <>
             <div className="w-4/5 mx-auto mb-20">
@@ -89,6 +90,4 @@ const Service = () => {
             <div></div>
         </>
     );
-};
-
-export default Service;
+}

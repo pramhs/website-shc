@@ -13,9 +13,7 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/home" element={<Home />} />
-                    <Route path="/services" element={<NotFound />} />
-                    <Route path="/about" element={<NotFound />} />
-                    <Route path="/contact" element={<NotFound />} />
+                    <Route path="/contact" element={<Contact />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>

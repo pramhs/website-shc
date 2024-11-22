@@ -14,8 +14,11 @@ import katolec from '../assets/customer_logo/katolec.png';
 import daijo from '../assets/customer_logo/daijo.png';
 import suzuki from '../assets/customer_logo/suzuki.png';
 import patco from '../assets/customer_logo/patco.png';
+import { Link } from 'react-router-dom';
+import Heading from '../components/Heading';
+import MainContainer from '../components/MainContainer';
 
-const Home = () => {
+export default function Home() {
     return (
         <>
             {/* hero section */}
@@ -25,21 +28,28 @@ const Home = () => {
                         <img src={net_element} alt="" className="h-full" />
                     </div>
                     <div className="absolute h-full">
-                        <div className="grid w-4/5 h-full mx-auto place-content-center">
-                            <div className="w-3/4 mt-16">
-                                <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
-                                    Driven by Quality, Committed to Satisfaction
-                                </h1>
-                                <p className="text-lg text-slate-200">
-                                    We are committed to optimizing technology
-                                    and resources, empowering resilient and
-                                    dedicated human resources, and ensuring
-                                    every product is of high quality. With
-                                    responsive customer service and timely
-                                    delivery, we also strive to build harmonious
-                                    relationships with the surrounding community
-                                    to create a positive impact.
-                                </p>
+                        <div className="grid h-full place-content-center">
+                            <div className="animate-[fade-in_1s_ease-in-out]">
+                                <MainContainer>
+                                    <div className="w-3/4 mt-16">
+                                        <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
+                                            Driven by Quality, Committed to
+                                            Satisfaction
+                                        </h1>
+                                        <p className="text-lg text-slate-200">
+                                            We are committed to optimizing
+                                            technology and resources, empowering
+                                            resilient and dedicated human
+                                            resources, and ensuring every
+                                            product is of high quality. With
+                                            responsive customer service and
+                                            timely delivery, we also strive to
+                                            build harmonious relationships with
+                                            the surrounding community to create
+                                            a positive impact.
+                                        </p>
+                                    </div>
+                                </MainContainer>
                             </div>
                         </div>
                     </div>
@@ -48,15 +58,19 @@ const Home = () => {
 
             {/* video section */}
             {/* header title */}
-            <div className="bg-[url('./assets/img-cover2.png')] bg-cover mb-16">
-                <div className="w-4/5 py-12 mx-auto">
-                    <HeadingTitle
-                        text="Discover Our Journey: Excellence in Manufacturing
-                            and Commitment to You"
-                        css="text-slate-200"
-                    />
-                </div>
-            </div>
+
+            <Heading>
+                <Heading.ImageCover
+                    className={'bg-[url(./assets/img-cover2.png)]'}
+                >
+                    <Heading.Container>
+                        <Heading.Text className="text-slate-200">
+                            Discover Our Journey: Excellence in Manufacturing
+                            and Commitment to You
+                        </Heading.Text>
+                    </Heading.Container>
+                </Heading.ImageCover>
+            </Heading>
 
             {/* video content */}
             <div className="w-4/5 mx-auto mb-32 overflow-hidden rounded-2xl">
@@ -126,40 +140,50 @@ const Home = () => {
                             </p>
                         </div>
                         <div>
-                            <button className="flex items-center px-6 py-3 mx-auto text-slate-200 bg-primary gap-x-6">
+                            <Link
+                                to="/service"
+                                className="flex items-center px-6 py-3 mx-auto text-slate-200 bg-primary gap-x-6"
+                            >
                                 <span>See all services & solutions</span>
                                 <FontAwesomeIcon icon={faAnglesRight} />
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
 
             {/* customers */}
+            <Heading>
+                <Heading.Container>
+                    <Heading.Text>
+                        For more than 20 years we have been trusted by our
+                        customers.
+                    </Heading.Text>
+                </Heading.Container>
+            </Heading>
             <div className="w-4/5 mx-auto mb-20">
-                <div className="mb-20">
-                    <HeadingTitle text="For more than 20 years we have been trusted by our customers." />
-                </div>
                 <div className="grid items-center grid-cols-6 justify-items-center gap-x-12 gap-y-4">
                     <CustomerLogo img={sharp} />
+                    <CustomerLogo img={samsung} />
                     <CustomerLogo img={epson} />
                     <CustomerLogo img={hmmi} />
-                    <CustomerLogo img={ingress} />
+
                     <CustomerLogo img={jvc} />
                     <CustomerLogo img={mmki} />
-                    <CustomerLogo img={samsung} />
+
                     <CustomerLogo img={katolec} />
                     <CustomerLogo img={daijo} />
                     <CustomerLogo img={suzuki} />
                     <CustomerLogo img={patco} />
+                    <CustomerLogo img={ingress} />
                 </div>
             </div>
             <Footer />
         </>
     );
-};
+}
 
-const ServiceSolutionCard = ({ img, text }) => {
+function ServiceSolutionCard({ img, text }) {
     return (
         <>
             <div className="relative w-56 h-56">
@@ -179,9 +203,9 @@ const ServiceSolutionCard = ({ img, text }) => {
             </div>
         </>
     );
-};
+}
 
-const CustomerLogo = ({ img }) => {
+function CustomerLogo({ img }) {
     return (
         <>
             <div className="grid items-center w-24 h-24">
@@ -189,14 +213,4 @@ const CustomerLogo = ({ img }) => {
             </div>
         </>
     );
-};
-
-const HeadingTitle = ({ text, css }) => {
-    return (
-        <div className="w-2/5">
-            <h3 className={`${css} text-2xl font-medium`}>{text}</h3>
-        </div>
-    );
-};
-
-export default Home;
+}

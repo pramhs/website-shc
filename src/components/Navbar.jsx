@@ -1,9 +1,20 @@
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import shc_logo from '../assets/logo.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 
-const NavbarContainer = ({ children }) => {
+export default function Navbar() {
+    return (
+        <>
+            <div className="absolute z-10 w-full">
+                <NavbarContainer>
+                    <NavbarBrand logo={shc_logo} brand="Shin Heung Indonesia" />
+                    <Navbarlink />
+                </NavbarContainer>
+            </div>
+        </>
+    );
+}
+
+function NavbarContainer({ children }) {
     return (
         <div className="bg-white border-b">
             <div className="px-16 py-2">
@@ -13,24 +24,24 @@ const NavbarContainer = ({ children }) => {
             </div>
         </div>
     );
-};
+}
 
-const NavbarBrand = ({ brand, logo }) => {
+function NavbarBrand({ brand, logo }) {
     return (
         <div>
             <Link to="/home">
                 <div className="flex items-center gap-x-2">
                     <img src={logo} alt="" className="size-9" />
-                    <h1 className="text-lg font-bold uppercase text-slate-800">
+                    <h1 className="text-lg font-medium uppercase text-slate-800">
                         {brand}
                     </h1>
                 </div>
             </Link>
         </div>
     );
-};
+}
 
-const Navbarlink = () => {
+function Navbarlink() {
     return (
         <nav className="py-4">
             <ul className="flex gap-x-10 text-slate-800">
@@ -49,18 +60,4 @@ const Navbarlink = () => {
             </ul>
         </nav>
     );
-};
-
-const Navbar = () => {
-    return (
-        <>
-            <div className="absolute z-50 w-full">
-                <NavbarContainer>
-                    <NavbarBrand logo={shc_logo} brand="Shin Heung Indonesia" />
-                    <Navbarlink />
-                </NavbarContainer>
-            </div>
-        </>
-    );
-};
-export default Navbar;
+}

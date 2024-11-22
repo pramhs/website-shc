@@ -12,7 +12,8 @@ import {
     faPeopleGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
-const About = () => {
+
+export default function About() {
     return (
         <>
             <div className="w-4/5 mx-auto mb-20">
@@ -316,5 +317,4 @@ const About = () => {
             <Footer />
         </>
     );
-};
-export default About;
+}

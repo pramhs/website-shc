@@ -17,6 +17,7 @@ import patco from '../assets/customer_logo/patco.png';
 import { Link } from 'react-router-dom';
 import Heading from '../components/Heading';
 import MainContainer from '../components/MainContainer';
+import { motion } from 'motion/react';
 
 export default function Home() {
     return (
@@ -30,34 +31,42 @@ export default function Home() {
                     <div className="absolute h-full">
                         <div className="grid h-full place-content-center">
                             <div className="animate-[fade-in_1s_ease-in-out]">
-                                <MainContainer>
-                                    <div className="w-3/4 mt-16">
-                                        <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
-                                            Driven by Quality, Committed to
-                                            Satisfaction
-                                        </h1>
-                                        <p className="text-lg text-slate-200">
-                                            We are committed to optimizing
-                                            technology and resources, empowering
-                                            resilient and dedicated human
-                                            resources, and ensuring every
-                                            product is of high quality. With
-                                            responsive customer service and
-                                            timely delivery, we also strive to
-                                            build harmonious relationships with
-                                            the surrounding community to create
-                                            a positive impact.
-                                        </p>
-                                    </div>
-                                </MainContainer>
+                                <motion.div
+                                    animate={{
+                                        x: [100, 0],
+                                        transition: {
+                                            ease: ['anticipate'],
+                                            duration: 1.6,
+                                        },
+                                    }}
+                                >
+                                    <MainContainer>
+                                        <div className="w-3/4 mt-16">
+                                            <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
+                                                Driven by Quality, Committed to
+                                                Satisfaction
+                                            </h1>
+                                            <p className="text-lg text-slate-200">
+                                                We are committed to optimizing
+                                                technology and resources,
+                                                empowering resilient and
+                                                dedicated human resources, and
+                                                ensuring every product is of
+                                                high quality. With responsive
+                                                customer service and timely
+                                                delivery, we also strive to
+                                                build harmonious relationships
+                                                with the surrounding community
+                                                to create a positive impact.
+                                            </p>
+                                        </div>
+                                    </MainContainer>
+                                </motion.div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            {/* video section */}
-            {/* header title */}
 
             <Heading>
                 <Heading.ImageCover

@@ -17,43 +17,53 @@ import MainContainer from '../components/MainContainer';
 import SectionTitle from '../components/SectionTitle';
 import Heading from '../components/Heading';
 import FactoryCard from '../components/FactoryCard';
+import { motion } from 'motion/react';
 
 export default function About() {
     return (
         <>
-            <MainContainer>
-                <div className="mb-20 pt-28">
-                    <div className="mb-10">
-                        <SectionTitle title={'PT Shin Heung Indonesia'} />
-                    </div>
+            <motion.div
+                animate={{
+                    x: [100, 0],
+                    transition: { ease: ['easeIn', 'easeOut'] },
+                }}
+            >
+                <MainContainer>
+                    <div className="mb-20 pt-28">
+                        <div className="mb-10">
+                            <SectionTitle title={'PT Shin Heung Indonesia'} />
+                        </div>
 
-                    <div className="flex items-center gap-x-12">
-                        <div className="flex-none">
-                            <img src={img_gerbang_shc} alt="" />
-                        </div>
-                        <div className="flex flex-col gap-y-6">
-                            <p>
-                                PT Shin Heung Indonesia is a foreign investment
-                                company engaged in manufacturing electronic
-                                components. It is a subsidiary of Shin Heung
-                                Co., Ltd. headquartered in Shinneung Ri Seowoon
-                                Myeon Anseong 456-853, South Korea.
-                            </p>
-                            <p>
-                                Our consistent ability to move strongly ahead in
-                                line with key trends in the electronics industry
-                                has given an acknowledged market reputation as a
-                                provider to world leaders in the field. Samindo
-                                Electronics is poised to scale event greater in
-                                growing EMS market by demonstrating the
-                                relevance of its business model, its core
-                                competence, and its rigorous standards for event
-                                fuller range of production capability.
-                            </p>
+                        <div className="flex items-center gap-x-12">
+                            <div className="flex-none">
+                                <img src={img_gerbang_shc} alt="" />
+                            </div>
+                            <div className="flex flex-col gap-y-6">
+                                <p>
+                                    PT Shin Heung Indonesia is a foreign
+                                    investment company engaged in manufacturing
+                                    electronic components. It is a subsidiary of
+                                    Shin Heung Co., Ltd. headquartered in
+                                    Shinneung Ri Seowoon Myeon Anseong 456-853,
+                                    South Korea.
+                                </p>
+                                <p>
+                                    Our consistent ability to move strongly
+                                    ahead in line with key trends in the
+                                    electronics industry has given an
+                                    acknowledged market reputation as a provider
+                                    to world leaders in the field. Samindo
+                                    Electronics is poised to scale event greater
+                                    in growing EMS market by demonstrating the
+                                    relevance of its business model, its core
+                                    competence, and its rigorous standards for
+                                    event fuller range of production capability.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </MainContainer>
+                </MainContainer>
+            </motion.div>
 
             <div className="mb-20 bg-gray-100">
                 <div className="w-4/5 mx-auto">

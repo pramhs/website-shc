@@ -20,6 +20,14 @@ import MainContainer from '../components/MainContainer';
 import { motion } from 'motion/react';
 
 export default function Home() {
+    const our_service = [
+        'Plastic Injection',
+        'Metal Stamping',
+        'Molding Design',
+        'Assembly',
+    ];
+    let counter = 0;
+
     return (
         <>
             {/* hero section */}
@@ -30,39 +38,35 @@ export default function Home() {
                     </div>
                     <div className="absolute h-full">
                         <div className="grid h-full place-content-center">
-                            <div className="animate-[fade-in_1s_ease-in-out]">
-                                <motion.div
-                                    animate={{
-                                        x: [100, 0],
-                                        transition: {
-                                            ease: ['anticipate'],
-                                            duration: 1.6,
-                                        },
-                                    }}
-                                >
-                                    <MainContainer>
-                                        <div className="w-3/4 mt-16">
-                                            <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
-                                                Driven by Quality, Committed to
-                                                Satisfaction
-                                            </h1>
-                                            <p className="text-lg text-slate-200">
-                                                We are committed to optimizing
-                                                technology and resources,
-                                                empowering resilient and
-                                                dedicated human resources, and
-                                                ensuring every product is of
-                                                high quality. With responsive
-                                                customer service and timely
-                                                delivery, we also strive to
-                                                build harmonious relationships
-                                                with the surrounding community
-                                                to create a positive impact.
-                                            </p>
-                                        </div>
-                                    </MainContainer>
-                                </motion.div>
-                            </div>
+                            <motion.div
+                                initial={{ x: 0, scale: 0 }}
+                                animate={{
+                                    x: 0,
+                                    scale: 1,
+                                    transition: { duration: 0.8 },
+                                }}
+                            >
+                                <MainContainer>
+                                    <div className="w-3/4 mt-16">
+                                        <h1 className="mb-4 text-6xl font-bold uppercase text-slate-200">
+                                            Driven by Quality, Committed to
+                                            Satisfaction
+                                        </h1>
+                                        <p className="text-lg text-slate-200">
+                                            We are committed to optimizing
+                                            technology and resources, empowering
+                                            resilient and dedicated human
+                                            resources, and ensuring every
+                                            product is of high quality. With
+                                            responsive customer service and
+                                            timely delivery, we also strive to
+                                            build harmonious relationships with
+                                            the surrounding community to create
+                                            a positive impact.
+                                        </p>
+                                    </div>
+                                </MainContainer>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -82,32 +86,41 @@ export default function Home() {
             </Heading>
 
             {/* video content */}
-            <div className="w-4/5 mx-auto mb-32 overflow-hidden rounded-2xl">
-                <div
-                    style={{
-                        position: 'relative',
-                        paddingBottom: '56.25%',
-                        height: 0,
-                        overflow: 'hidden',
-                    }}
-                >
-                    <iframe
-                        src="https://geo.dailymotion.com/player.html?video=x8rz86y"
+            <motion.div
+                whileInView={{
+                    y: [100, 0],
+                    scale: 1,
+                    transition: { duration: 1.6 },
+                }}
+                viewport={{ once: true }}
+            >
+                <div className="w-4/5 mx-auto mb-32 overflow-hidden rounded-2xl">
+                    <div
                         style={{
-                            width: '100%',
-                            height: '100%',
-                            position: 'absolute',
-                            left: 0,
-                            top: 0,
+                            position: 'relative',
+                            paddingBottom: '56.25%',
+                            height: 0,
                             overflow: 'hidden',
-                            border: 'none',
                         }}
-                        allowFullScreen=""
-                        title="Dailymotion Video Player"
-                        allow="web-share"
-                    ></iframe>
+                    >
+                        <iframe
+                            src="https://geo.dailymotion.com/player.html?video=x8rz86y"
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                position: 'absolute',
+                                left: 0,
+                                top: 0,
+                                overflow: 'hidden',
+                                border: 'none',
+                            }}
+                            allowFullScreen=""
+                            title="Dailymotion Video Player"
+                            allow="web-share"
+                        ></iframe>
+                    </div>
                 </div>
-            </div>
+            </motion.div>
 
             {/* product and service section */}
             <div className="py-10 mb-32 bg-slate-100">
@@ -121,22 +134,24 @@ export default function Home() {
                 {/* card */}
                 <div className="w-4/5 mx-auto mb-20">
                     <div className="flex justify-between">
-                        <ServiceSolutionCard
-                            img={img_machine}
-                            text="Plastic Injection"
-                        />
-                        <ServiceSolutionCard
-                            img={img_machine}
-                            text="Metal Stamping"
-                        />
-                        <ServiceSolutionCard
-                            img={img_machine}
-                            text="Molding Design"
-                        />
-                        <ServiceSolutionCard
-                            img={img_machine}
-                            text="Assembly"
-                        />
+                        {our_service.map((value) => (
+                            <motion.div
+                                initial={{ y: 60, opacity: 0 }}
+                                whileInView={{
+                                    y: 0,
+                                    opacity: 100,
+                                    transition: {
+                                        duration: 0.3,
+                                        ease: 'backOut',
+                                    },
+                                }}
+                            >
+                                <ServiceSolutionCard
+                                    img={img_machine}
+                                    text={value}
+                                />
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
 

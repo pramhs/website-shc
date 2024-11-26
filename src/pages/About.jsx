@@ -143,9 +143,9 @@ export default function About() {
                     {/* card 1 */}
                     <FactoryCard>
                         <FactoryCard.Title>
-                            Factory 1 - SHIN HEUNG HYUNDAI
+                            SHIN HEUNG JABABEKA - Factory 1
                         </FactoryCard.Title>
-                        <FactoryCard.Body background={shc_hyundai} />
+                        <FactoryCard.Body background={img_gerbang_shc} />
                         <FactoryCard.Container>
                             <FactoryCard.Content
                                 address={
@@ -171,9 +171,9 @@ export default function About() {
                     {/* card 2 */}
                     <FactoryCard>
                         <FactoryCard.Title>
-                            Factory 2 - SHIN HEUNG JABABEKA
+                            SHIN HEUNG JABABEKA - Factory 2
                         </FactoryCard.Title>
-                        <FactoryCard.Body background={img_gerbang_shc} />
+                        <FactoryCard.Body background={shc_hyundai} />
                         <FactoryCard.Container>
                             <FactoryCard.Content
                                 address={

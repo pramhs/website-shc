@@ -46,16 +46,16 @@ function Navbarlink() {
         <nav className="py-4">
             <ul className="flex gap-x-10 text-slate-800">
                 <li>
-                    <Link to="/home">Home</Link>
+                    <Link to="/website-shc/home">Home</Link>
                 </li>
                 <li>
-                    <Link to="/services">Service</Link>
+                    <Link to="/website-shc/services">Service</Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/website-shc/about">About</Link>
                 </li>
                 <li>
-                    <Link to="/contact">Contact us</Link>
+                    <Link to="/website-shc/contact">Contact us</Link>
                 </li>
             </ul>
         </nav>

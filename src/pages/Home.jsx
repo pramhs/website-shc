@@ -61,7 +61,7 @@ export default function Home() {
 
             <Heading>
                 <Heading.ImageCover
-                    className={'bg-[url(./assets/img-cover2.png)]'}
+                    className={"bg-[url('./assets/img-cover1.png')]"}
                 >
                     <Heading.Container>
                         <Heading.Text className="text-slate-200">

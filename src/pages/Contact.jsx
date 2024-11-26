@@ -15,14 +15,14 @@ export default function Contact() {
                     </div>
                 </MainContainer>
             </div>
-            <Footer />
+            <Footer nocontent />
         </>
     );
 }
 
 function Cover() {
     return (
-        <div className="bg-[url('./assets/img-cover3.png')] bg-cover rounded-xl overflow-hidden inline-block">
+        <div className="bg-[url('./assets/img-cover3.png')] bg-cover rounded-l-xl overflow-hidden inline-block">
             <div className="relative h-[28rem] w-96">
                 <div className="absolute w-full h-full bg-black opacity-40"></div>
                 <div className="absolute grid w-full h-full px-6 py-4 place-content-center">

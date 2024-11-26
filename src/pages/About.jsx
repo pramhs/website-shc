@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import img_gerbang_shc from '../assets/foto-gerbang-shc.png';
+import shc_hyundai from '../assets/shc_hyundai.jpg';
 import cert from '../assets/cert.jpg';
 import plakat from '../assets/plakat.jpg';
 import {
@@ -12,43 +13,47 @@ import {
     faPeopleGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import Footer from '../components/Footer';
+import MainContainer from '../components/MainContainer';
+import SectionTitle from '../components/SectionTitle';
+import Heading from '../components/Heading';
+import FactoryCard from '../components/FactoryCard';
 
 export default function About() {
     return (
         <>
-            <div className="w-4/5 mx-auto mb-20">
-                <div className="mb-20">
-                    <h3 className="text-2xl font-semibold text-center uppercase">
-                        PT Shin Heung Indonesia
-                    </h3>
-                    <div className="w-32 h-1 mx-auto bg-red-600"></div>
-                </div>
-                <div className="flex items-center gap-x-12">
-                    <div className="flex-none">
-                        <img src={img_gerbang_shc} alt="" />
+            <MainContainer>
+                <div className="mb-20 pt-28">
+                    <div className="mb-10">
+                        <SectionTitle title={'PT Shin Heung Indonesia'} />
                     </div>
-                    <div className="flex flex-col gap-y-6">
-                        <p>
-                            PT Shin Heung Indonesia is a foreign investment
-                            company engaged in manufacturing electronic
-                            components. It is a subsidiary of Shin Heung Co.,
-                            Ltd. headquartered in Shinneung Ri Seowoon Myeon
-                            Anseong 456-853, South Korea.
-                        </p>
-                        <p>
-                            Our consistent ability to move strongly ahead in
-                            line with key trends in the electronics industry has
-                            given an acknowledged market reputation as a
-                            provider to world leaders in the field. Samindo
-                            Electronics is poised to scale event greater in
-                            growing EMS market by demonstrating the relevance of
-                            its business model, its core competence, and its
-                            rigorous standards for event fuller range of
-                            production capability.
-                        </p>
+
+                    <div className="flex items-center gap-x-12">
+                        <div className="flex-none">
+                            <img src={img_gerbang_shc} alt="" />
+                        </div>
+                        <div className="flex flex-col gap-y-6">
+                            <p>
+                                PT Shin Heung Indonesia is a foreign investment
+                                company engaged in manufacturing electronic
+                                components. It is a subsidiary of Shin Heung
+                                Co., Ltd. headquartered in Shinneung Ri Seowoon
+                                Myeon Anseong 456-853, South Korea.
+                            </p>
+                            <p>
+                                Our consistent ability to move strongly ahead in
+                                line with key trends in the electronics industry
+                                has given an acknowledged market reputation as a
+                                provider to world leaders in the field. Samindo
+                                Electronics is poised to scale event greater in
+                                growing EMS market by demonstrating the
+                                relevance of its business model, its core
+                                competence, and its rigorous standards for event
+                                fuller range of production capability.
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </MainContainer>
 
             <div className="mb-20 bg-gray-100">
                 <div className="w-4/5 mx-auto">
@@ -122,159 +127,81 @@ export default function About() {
 
             <div className="w-4/5 mx-auto">
                 <div className="mb-20">
-                    <h3 className="text-2xl font-semibold text-center uppercase">
-                        Factory Overview
-                    </h3>
-                    <div className="w-32 h-1 mx-auto bg-red-600"></div>
+                    <SectionTitle title={'Factory Overview'} />
                 </div>
                 <div className="grid grid-cols-2 mb-20 gap-x-16">
                     {/* card 1 */}
-                    <div className="">
-                        <div className="p-4 bg-primary">
-                            <h5 className="font-medium text-slate-200">
-                                Factory 1
-                            </h5>
-                        </div>
-                        <div className="relative w-full">
-                            <div className="w-full">
-                                <img
-                                    src={img_gerbang_shc}
-                                    alt=""
-                                    className="w-full"
+                    <FactoryCard>
+                        <FactoryCard.Title>
+                            Factory 1 - SHIN HEUNG HYUNDAI
+                        </FactoryCard.Title>
+                        <FactoryCard.Body background={shc_hyundai} />
+                        <FactoryCard.Container>
+                            <FactoryCard.Content
+                                address={
+                                    'Kawasan Industri Jababeka III, Jl. Tekno Raya No. A-5A. Pasirgombong. Cikarang Utara, Kab. Bekasi, Jawa Barat'
+                                }
+                            />
+                            <FactoryCard.Footer>
+                                <FactoryCard.FooterContent
+                                    icon={faBuilding}
+                                    title={'Building'}
+                                    surfaceArea={'10.000'}
                                 />
-                            </div>
-                            <div className="absolute bottom-0 invisible w-full">
-                                <div className="p-4 bg-white border-l-2 border-r-2">
-                                    <div className="mb-8">
-                                        <p>
-                                            Kawasan Industri Jababeka III, Jl.
-                                            Tekno Raya No. A-5A. Pasirgombong.
-                                            Cikarang Utara, Kab. Bekasi, Jawa
-                                            Barat
-                                        </p>
-                                    </div>
-                                    <div className="flex gap-x-10">
-                                        <div className="flex items-center gap-x-2">
-                                            <div className="text-primary">
-                                                <FontAwesomeIcon
-                                                    icon={faEarth}
-                                                    size="xl"
-                                                />
-                                            </div>
-                                            <div>
-                                                <h6 className="text-sm font-semibold text-primary">
-                                                    Land
-                                                </h6>
-                                                <p className="text-sm font-semibold">
-                                                    10.000 m2
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center gap-x-2">
-                                            <div className="text-primary">
-                                                <FontAwesomeIcon
-                                                    icon={faBuilding}
-                                                    size="xl"
-                                                />
-                                            </div>
-                                            <div>
-                                                <h6 className="text-sm font-semibold text-primary">
-                                                    Land
-                                                </h6>
-                                                <p className="text-sm font-semibold">
-                                                    10.000 m2
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="h-3 border-b-2 border-l-2 border-r-2 bg-slate-100"></div>
-                            </div>
-                        </div>
-                    </div>
+
+                                <FactoryCard.FooterContent
+                                    icon={faEarth}
+                                    title={'Building'}
+                                    surfaceArea={'10.000'}
+                                />
+                            </FactoryCard.Footer>
+                        </FactoryCard.Container>
+                    </FactoryCard>
 
                     {/* card 2 */}
-                    <div className="group">
-                        <div className="p-4 bg-primary">
-                            <h5 className="font-medium text-slate-200">
-                                Factory 2
-                            </h5>
-                        </div>
-                        <div className="relative w-full">
-                            <div className="w-full">
-                                <img
-                                    src={img_gerbang_shc}
-                                    alt=""
-                                    className="w-full"
+                    <FactoryCard>
+                        <FactoryCard.Title>
+                            Factory 2 - SHIN HEUNG JABABEKA
+                        </FactoryCard.Title>
+                        <FactoryCard.Body background={img_gerbang_shc} />
+                        <FactoryCard.Container>
+                            <FactoryCard.Content
+                                address={
+                                    'Kawasan Industri Jababeka III, Jl. Tekno Raya No. A-5A. Pasirgombong. Cikarang Utara, Kab. Bekasi, Jawa Barat'
+                                }
+                            />
+                            <FactoryCard.Footer>
+                                <FactoryCard.FooterContent
+                                    icon={faBuilding}
+                                    title={'Building'}
+                                    surfaceArea={'10.000'}
                                 />
-                            </div>
-                            <div className="absolute bottom-0 invisible w-full transition ease-in-out delay-150 group-hover:visible">
-                                <div className="p-4 bg-white border-l-2 border-r-2">
-                                    <div className="mb-8">
-                                        <p>
-                                            Kawasan Industri Jababeka III, Jl.
-                                            Tekno Raya No. A-5A. Pasirgombong.
-                                            Cikarang Utara, Kab. Bekasi, Jawa
-                                            Barat
-                                        </p>
-                                    </div>
-                                    <div className="flex gap-x-10">
-                                        <div className="flex items-center gap-x-2">
-                                            <div className="text-primary">
-                                                <FontAwesomeIcon
-                                                    icon={faEarth}
-                                                    size="xl"
-                                                />
-                                            </div>
-                                            <div>
-                                                <h6 className="text-sm font-semibold text-primary">
-                                                    Land
-                                                </h6>
-                                                <p className="text-sm font-semibold">
-                                                    10.000 m2
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <div className="flex items-center gap-x-2">
-                                            <div className="text-primary">
-                                                <FontAwesomeIcon
-                                                    icon={faBuilding}
-                                                    size="xl"
-                                                />
-                                            </div>
-                                            <div>
-                                                <h6 className="text-sm font-semibold text-primary">
-                                                    Building
-                                                </h6>
-                                                <p className="text-sm font-semibold">
-                                                    10.000 m2
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="h-3 border-b-2 border-l-2 border-r-2 bg-slate-100"></div>
-                            </div>
-                        </div>
-                    </div>
+
+                                <FactoryCard.FooterContent
+                                    icon={faEarth}
+                                    title={'Building'}
+                                    surfaceArea={'10.000'}
+                                />
+                            </FactoryCard.Footer>
+                        </FactoryCard.Container>
+                    </FactoryCard>
                 </div>
             </div>
             <div className="mb-20">
-                <h3 className="text-2xl font-semibold text-center uppercase">
-                    Certification & Achievement
-                </h3>
-                <div className="w-32 h-1 mx-auto bg-red-600"></div>
+                <SectionTitle title={'Certification & Achievement'} />
             </div>
-            <div className='bg-[url("./assets/img-cover1.png")] bg-cover mb-20'>
-                <div className="w-4/5 py-12 mx-auto">
-                    <div className="w-2/5">
-                        <h3 className="text-2xl font-medium text-slate-200">
+            <Heading>
+                <Heading.ImageCover
+                    className={"bg-[url('./assets/img-cover2.png')]"}
+                >
+                    <Heading.Container>
+                        <Heading.Text className={'text-slate-200'}>
                             Always maintain assessment standards and continue to
                             innovate.
-                        </h3>
-                    </div>
-                </div>
-            </div>
+                        </Heading.Text>
+                    </Heading.Container>
+                </Heading.ImageCover>
+            </Heading>
 
             {/* cert */}
             <div className="w-4/5 mx-auto mb-20">

@@ -36,11 +36,17 @@ function Content() {
         </div>
     );
 }
-export default function Footer() {
+export default function Footer({ nocontent }) {
     return (
         <>
-            <Content />
-            <Copyright />
+            {nocontent ? (
+                <Copyright />
+            ) : (
+                <>
+                    <Content />
+                    <Copyright />
+                </>
+            )}
         </>
     );
 }

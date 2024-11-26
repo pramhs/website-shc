@@ -10,7 +10,7 @@ function Container({ children }) {
     );
 }
 
-function ImageCover({ className, children }) {
+function ImageCover({ children, className }) {
     return <div className={`${className} bg-cover py-12`}>{children}</div>;
 }
 

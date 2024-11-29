@@ -49,7 +49,7 @@ function Navbarlink() {
                     <Link to="/website-shc/home">Home</Link>
                 </li>
                 <li>
-                    <Link to="/website-shc/services">Service</Link>
+                    <Link to="/website-shc/service">Service</Link>
                 </li>
                 <li>
                     <Link to="/website-shc/about">About</Link>

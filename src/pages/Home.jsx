@@ -136,13 +136,10 @@ export default function Home() {
                     <div className="flex justify-between">
                         {our_service.map((value) => (
                             <motion.div
-                                initial={{ y: 60, opacity: 0 }}
                                 whileInView={{
-                                    y: 0,
-                                    opacity: 100,
+                                    opacity: [0, 50],
                                     transition: {
-                                        duration: 0.3,
-                                        ease: 'backOut',
+                                        duration: 0.6,
                                     },
                                 }}
                             >

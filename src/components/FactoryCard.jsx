@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function FactoryCard({ children }) {
-    return <div className="relative w-full group">{children}</div>;
+    return <div className="relative w-full">{children}</div>;
 }
 
 function Title({ children }) {
@@ -14,17 +14,15 @@ function Title({ children }) {
 
 function Body({ background }) {
     return (
-        <div className="w-full">
-            <div className="w-full">
-                <img src={background} alt="" className="w-full" />
-            </div>
+        <div className="w-full h-96">
+            <img src={background} alt="" className="w-full h-full" />
         </div>
     );
 }
 
 function Container({ children }) {
     return (
-        <div className="absolute invisible bottom-0 w-full bg-white border-l-2 border-r-2 group-hover:visible">
+        <div className="bottom-0 w-full bg-white border-l-2 border-r-2">
             {children}
         </div>
     );

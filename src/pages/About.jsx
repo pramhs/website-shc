@@ -24,8 +24,9 @@ export default function About() {
         <>
             <motion.div
                 animate={{
-                    x: [100, 0],
-                    transition: { ease: ['easeIn', 'easeOut'] },
+                    y: [-100, 0],
+                    opacity: [0, 30],
+                    transition: { ease: ['easeIn', 'easeOut'], duration: 0.5 },
                 }}
             >
                 <MainContainer>
@@ -146,6 +147,7 @@ export default function About() {
                             SHIN HEUNG JABABEKA - Factory 1
                         </FactoryCard.Title>
                         <FactoryCard.Body background={img_gerbang_shc} />
+
                         <FactoryCard.Container>
                             <FactoryCard.Content
                                 address={

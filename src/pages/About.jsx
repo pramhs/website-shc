@@ -136,15 +136,15 @@ export default function About() {
                 </div>
             </div>
 
-            <div className="w-4/5 mx-auto">
+            <div className="w-4/5 mx-auto mb-40">
                 <div className="mb-20">
                     <SectionTitle title={'Factory Overview'} />
                 </div>
-                <div className="grid grid-cols-2 mb-20 gap-x-16">
+                <div className="grid grid-cols-2 gap-x-16">
                     {/* card 1 */}
                     <FactoryCard>
                         <FactoryCard.Title>
-                            FACTORY 1 - SHIN HEUNG INDONESIA KAWASAN JABABEKA
+                            SHIN HEUNG KAWASAN JABABEKA
                         </FactoryCard.Title>
                         <FactoryCard.Body background={img_gerbang_shc} />
 
@@ -173,7 +173,7 @@ export default function About() {
                     {/* card 2 */}
                     <FactoryCard>
                         <FactoryCard.Title>
-                            Factory 2 - SHIN HEUNG INDONESIA KAWASAN HYUNDAI
+                            SHIN HEUNG KAWASAN HYUNDAI
                         </FactoryCard.Title>
                         <FactoryCard.Body background={shc_hyundai} />
                         <FactoryCard.Container>
@@ -199,9 +199,7 @@ export default function About() {
                     </FactoryCard>
                 </div>
             </div>
-            <div className="mb-20">
-                <SectionTitle title={'Certification & Achievement'} />
-            </div>
+
             <Heading>
                 <Heading.ImageCover
                     className={"bg-[url('./assets/img-cover2.png')]"}

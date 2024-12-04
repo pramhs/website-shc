@@ -29,7 +29,7 @@ function NavbarContainer({ children }) {
 function NavbarBrand({ brand, logo }) {
     return (
         <div>
-            <Link to="/home">
+            <Link to="/website-shc/home">
                 <div className="flex items-center gap-x-2">
                     <img src={logo} alt="" className="size-9" />
                     <h1 className="text-lg font-medium uppercase text-slate-800">

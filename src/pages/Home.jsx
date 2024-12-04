@@ -3,23 +3,26 @@ import img_machine from '../assets/machine.jpg';
 import net_element from '../assets/net_element.png';
 import Footer from '../components/Footer';
 import { faAnglesRight } from '@fortawesome/free-solid-svg-icons';
-import sharp from '../assets/customer_logo/sharp.png';
-import epson from '../assets/customer_logo/epson.png';
-import hmmi from '../assets/customer_logo/hmmi.png';
-import ingress from '../assets/customer_logo/ingress.png';
-import jvc from '../assets/customer_logo/jvc.png';
-import mmki from '../assets/customer_logo/mmki.png';
-import samsung from '../assets/customer_logo/samsung.png';
-import katolec from '../assets/customer_logo/katolec.png';
-import daijo from '../assets/customer_logo/daijo.png';
-import suzuki from '../assets/customer_logo/suzuki.png';
-import patco from '../assets/customer_logo/patco.png';
 import { Link } from 'react-router-dom';
 import Heading from '../components/Heading';
 import MainContainer from '../components/MainContainer';
 import { motion } from 'motion/react';
 
 export default function Home() {
+    const customers = [
+        { customer: 'Samsung', logo: 'customer_logo/samsung.png' },
+        { customer: 'Sharp', logo: 'customer_logo/sharp.png' },
+        { customer: 'JVC', logo: 'customer_logo/jvc.png' },
+        { customer: 'HMMI', logo: 'customer_logo/hmmi.png' },
+        { customer: 'Epson', logo: 'customer_logo/epson.png' },
+        { customer: 'Katolec', logo: 'customer_logo/katolec.png' },
+        { customer: 'MMKI', logo: 'customer_logo/mmki.png' },
+        { customer: 'Ingress', logo: 'customer_logo/ingress.png' },
+        { customer: 'Daijo', logo: 'customer_logo/daijo.png' },
+        { customer: 'patco', logo: 'customer_logo/patco.png' },
+        { customer: 'Suzuki', logo: 'customer_logo/suzuki.png' },
+    ];
+
     const our_service = [
         'Plastic Injection',
         'Metal Stamping',
@@ -184,19 +187,9 @@ export default function Home() {
             </Heading>
             <div className="w-4/5 mx-auto mb-20">
                 <div className="grid items-center grid-cols-6 justify-items-center gap-x-12 gap-y-4">
-                    <CustomerLogo img={sharp} />
-                    <CustomerLogo img={samsung} />
-                    <CustomerLogo img={epson} />
-                    <CustomerLogo img={hmmi} />
-
-                    <CustomerLogo img={jvc} />
-                    <CustomerLogo img={mmki} />
-
-                    <CustomerLogo img={katolec} />
-                    <CustomerLogo img={daijo} />
-                    <CustomerLogo img={suzuki} />
-                    <CustomerLogo img={patco} />
-                    <CustomerLogo img={ingress} />
+                    {customers.map((value, key) => (
+                        <CustomerLogo img={value.logo} key={key} />
+                    ))}
                 </div>
             </div>
             <Footer />

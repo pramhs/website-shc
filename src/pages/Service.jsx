@@ -6,9 +6,12 @@ export default function Service() {
     const arr = [
         {
             section: 'Metal Stamping',
-            title: 'Heading title metal stamping',
-            paragraph:
-                'Lorem ipsum odor amet, consectetuer adipiscing elit. Accumsan purus sed scelerisque fusce nibh erat quisque tellus. Taciti leo porta hac lectus, orci primis molestie. Amet dignissim ex aliquam in ultricies. Enim aenean accumsan congue senectus dictumst. Dignissim magna quis erat sapien porttitor eget.',
+            title: 'Quality, Speed, and Accuracy',
+            paragraph: [
+                'We deliver the best quality by using advanced machinery and high-quality materials, resulting in durable components.',
+                'We also ensure high production speeds, allowing us to meet tight deadlines without compromising on quality.',
+                'Lastly, accuracy is our main focus, with precision technology that ensures every component conforms to the desired specifications.',
+            ],
             image: [
                 { title: 'Image Title 1', img: 'path.png' },
                 { title: 'Image Title 2', img: 'path.png' },
@@ -16,9 +19,12 @@ export default function Service() {
         },
         {
             section: 'Plastic Injection',
-            title: 'Heading title plastic injection',
-            paragraph:
-                'Enim aenean accumsan congue senectus dictumst. Dignissim magna quis erat sapien porttitor eget.',
+            title: 'Maximize Production Process',
+            paragraph: [
+                'we optimize every step in the production process to achieve the best results with high efficiency.',
+                'With advanced technology and structured management, we ensure that every stage of production runs smoothly, minimizing time and cost wastage and improving output quality.',
+                'This approach allows us to meet large volume demands without compromising accuracy or speed, providing you with a more productive and profitable solution.',
+            ],
             image: [
                 { title: 'Image Title 1', img: 'path.png' },
                 { title: 'Image Title 2', img: 'path.png' },
@@ -30,9 +36,10 @@ export default function Service() {
         },
         {
             section: 'Assembly',
-            title: 'Heading Title Assembly',
-            paragraph:
-                'Enim aenean accumsan congue senectus dictumst. Dignissim magna quis erat sapien porttitor eget',
+            title: 'Efficient and Cost Effective',
+            paragraph: [
+                'We prioritize efficiency in every stage of production, making optimal use of time and resources to produce products quickly and precisely.',
+            ],
             image: [
                 { title: 'Image Title 4', img: 'path.png' },
                 { title: 'Image Title 5', img: 'path.png' },
@@ -41,9 +48,11 @@ export default function Service() {
         },
         {
             section: 'Molding Design',
-            title: 'Heading title Molding Design',
-            paragraph:
-                'Enim aenean accumsan congue senectus dictumst. Dignissim magna quis erat sapien porttitor eget',
+            title: 'From Design to Mass Production',
+            paragraph: [
+                'from the detailed planning and design stage to efficient large-scale production.',
+                'Using the latest technology and integrated processes, we ensure that each component produced not only meets technical specifications, but is also produced with high quality and consistency, ready to meet large market demands.',
+            ],
             image: [{ title: 'image 1', img: 'path.png' }],
         },
     ];
@@ -57,11 +66,11 @@ export default function Service() {
     return (
         <>
             {/* navigation button */}
-            <MainContainer className={'mb-20'}>
+            <MainContainer className={'mb-10'}>
                 <div className="flex pt-28 gap-x-6">
                     <div className="w-1/4">
                         <button
-                            className="text-slate-200 uppercase px-6 py-6 bg-orange-700 w-full"
+                            className="text-slate-200 uppercase px-6 py-6 bg-gray-800 w-full"
                             onClick={() => handleClick(0)}
                         >
                             Metal Stamping
@@ -69,7 +78,7 @@ export default function Service() {
                     </div>
                     <div className="w-1/4">
                         <button
-                            className="text-slate-200 uppercase px-6 py-6 bg-purple-700 w-full"
+                            className="text-slate-200 uppercase px-6 py-6 bg-gray-800 w-full"
                             onClick={() => handleClick(1)}
                         >
                             Plastic Injection
@@ -77,7 +86,7 @@ export default function Service() {
                     </div>
                     <div className="w-1/4">
                         <button
-                            className="text-slate-200 uppercase px-6 py-6 bg-teal-700 w-full"
+                            className="text-slate-200 uppercase px-6 py-6 bg-gray-800 w-full"
                             onClick={() => handleClick(2)}
                         >
                             Assembly
@@ -85,7 +94,7 @@ export default function Service() {
                     </div>
                     <div className="w-1/4">
                         <button
-                            className="text-slate-200 uppercase px-6 py-6 bg-pink-700 w-full"
+                            className="text-slate-200 uppercase px-6 py-6 bg-gray-800 w-full"
                             onClick={() => handleClick(3)}
                         >
                             Molding Design
@@ -95,22 +104,29 @@ export default function Service() {
             </MainContainer>
 
             {/* main content */}
-            <MainContainer className={'mb-28'}>
-                <div className="flex items-center mb-20">
-                    <hr className="border-slate-600 w-2/5" />
+            <MainContainer className={'mb-20 bg-gray-200/80 py-10 px-4'}>
+                <div className="flex items-center mb-5">
+                    <hr className="border-slate-300 w-2/5" />
 
                     <div className="w-3/5">
-                        <h1 className="uppercase text-3xl text-center font-medium text-slate-800">
-                            {example.title}
+                        <h1 className="uppercase text-4xl text-center font-semibold text-red-600">
+                            {example.section}
                         </h1>
                     </div>
 
-                    <hr className="border-slate-600 w-2/5" />
+                    <hr className="border-slate-300 w-2/5" />
                 </div>
-                <div className="text-center px-4 text-slate-800 mb-20">
-                    {example.paragraph}
+                <div className="mb-5">
+                    <h2 className="text-2xl text-center font-medium text-slate-800">
+                        {example.title}
+                    </h2>
                 </div>
-                <hr className="w-full border-slate-600" />
+                <div className="text-center px-10 text-gray-600 mb-10 flex flex-col gap-y-2">
+                    {example.paragraph.map((value, key) => (
+                        <p>{value}</p>
+                    ))}
+                </div>
+                <hr className="w-full border-slate-300" />
             </MainContainer>
 
             <MainContainer className={'mb-20'}>

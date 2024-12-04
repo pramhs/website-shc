@@ -26,7 +26,7 @@ function Content() {
                         </p>
                     </div>
                     <Link
-                        to="/contact"
+                        to="/website-shc/contact"
                         className="px-4 py-2 bg-primary text-slate-200"
                     >
                         Contact Us
